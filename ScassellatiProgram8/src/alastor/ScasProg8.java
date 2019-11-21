@@ -4,7 +4,7 @@ package alastor;
 * Author: Richard Scassellati
 * GitHub: RichardScassellati
 * Description: Loops through grades
-* Last Modified: 11/12/2019
+* Last Modified: 11/21/2019
 * Version: 1.0
 */
 import java.io.*;
@@ -14,6 +14,7 @@ public class ScasProg8 {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
+		try {
 		
 		//open file for use
 		File checkGrades = new File("/Users/1923scasrich/Desktop/grades.txt");
@@ -60,7 +61,17 @@ public class ScasProg8 {
 		
 		keyboardIn.close();
 		keyboardOut.close();
-
+		}
+		catch (EOFException error) { //if the end of the file is reached
+			System.out.println("Sorry, but I seem to have reached the end of that file.");
+			System.out.println("Error message: " + error.getMessage()); //prints the rest of the error message
+		}
+		catch (FileNotFoundException error) { //if the file isn't found
+			System.out.println("Sorry, but I can't find that file.");
+			System.out.println("Error message: " + error.getMessage()); //prints the rest of the error message
+		}
+		
+		
 	}
 
 }
