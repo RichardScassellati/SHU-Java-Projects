@@ -43,7 +43,7 @@ public class lemons {
 	}
 	
 	public void lemonToss(int dice) {
-		System.out.println("It's time to roll the dice.\nThe dice roll a " + dice + ".");
+		System.out.println("\n\nIt's time to roll the dice.\nThe dice roll a " + dice + ".");
 		
 		//determine if lemons are thrown or not
 		if (lemonAmount > dice) { //thrown lemons
